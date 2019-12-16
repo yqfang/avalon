@@ -1,0 +1,17 @@
+**/target
+**/.DS_Store
+**/*.iml
+**/deploy
+log
+**/node_modules
+**/*.lock
+/bin/
+.classpath
+.idea/
+.project
+.settings/
+dist*
+**/*.versionsBackup
+.vscode
+*dist*.tar.gz
+gerrit

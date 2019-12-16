@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+		xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>avalon</artifactId>
+    <version>1.0.0</version>
+
+	<packaging>jar</packaging>
+	<parent>
+        <groupId>com.unionpay.cloudatlas</groupId>
+        <artifactId>cloudatlas</artifactId>
+        <version>2.0.2.Final</version>
+        <relativePath></relativePath>
+	</parent>
+	<properties>
+		<main.class>com.unionpay.cloudatlas.avalon.stream.Hello1</main.class>
+		<spring-finchley-dependencies.version>1.0.0</spring-finchley-dependencies.version>
+		<spring-finchley-dependencies-fix.version>1.0.0</spring-finchley-dependencies-fix.version>
+		<version.java>1.8</version.java>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.unionpay.cloudatlas</groupId>
+				<artifactId>spring-finchley-dependencies-fix</artifactId>
+				<version>${spring-finchley-dependencies-fix.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.unionpay.cloudatlas</groupId>
+				<artifactId>spring-finchley-dependencies</artifactId>
+				<version>${spring-finchley-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency><!-- 引入 activity_container.tar.gz , 必须要-->
+				<groupId>com.unionpay.cloudatlas</groupId>
+				<artifactId>activity_container</artifactId>
+				<version>${activity_container.version}</version>
+				<type>tar.gz</type>
+				<exclusions>
+					<exclusion>
+						<groupId>*</groupId>
+						<artifactId>*</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
+        </dependency>
+    </dependencies>
+</project>
